@@ -1,0 +1,13 @@
+# Ignore the build and dist directories
+dist
+
+# Ignore these, just do it
+.git
+node_modules
+.DS_Store
+*.log
+*.swp
+
+# SSL certs
+cert.crt
+cert.key
