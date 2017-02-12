@@ -1,3 +1,9 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
+var path = require('path');
+
+// "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -19,6 +25,15 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      filename: 'index.html',
+      inject: false
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [{
       test: /\.js?$/,
